@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class pointTracking : MonoBehaviour
 {
-    public static int fedDog = 0;
-    public static int weekDay = 1;
-    public static int wrongChoice = 0;
+    public static int timesFed = 0;
+    public static int day = 1;
+    public static int wrong = 0;
 
     public static pointTracking instance = null;
     private void Awake()
