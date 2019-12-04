@@ -21,7 +21,7 @@ public class dogActions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(center.x + Mathf.Sin(Time.time *vibrateSpeed) * centerDistance, center.y, center.z);
+        transform.position = new Vector3(center.x + Mathf.Sin(Time.time *vibrateSpeed) * centerDistance, center.y, center.z);// rowan from code lab help is good at math and I'm not. It's a math sine.
 
     }
 }
