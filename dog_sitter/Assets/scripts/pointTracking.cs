@@ -33,12 +33,13 @@ public class pointTracking : MonoBehaviour
 
     private void Update()
     {
-      if ( NewDay== 4)
+      if ( NewDay== 5)
         {
+            print("I'm going to End now!");
             GameEnds = true;
             if (GameEnds == true)
             {
-                EndGameStart += Time.deltaTime;
+                EndGameStart += 1 * Time.deltaTime;
                 if (EndGameStart >= EndGameTimer)
                 {
                     SceneManager.LoadScene("score_screen");

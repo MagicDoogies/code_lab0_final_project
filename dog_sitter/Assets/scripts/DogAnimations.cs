@@ -10,7 +10,8 @@ public class DogAnimations : MonoBehaviour
     public float CenterDistance;
     public float VibrateSpeed;
     float AnimationTimer = 0f;//number the timer starts at.
-    float MaxTime = 1f; //Maximum amount of time any timer can go past.
+    float MaxTime = 2f; //Maximum amount of time any timer can go past.
+    public bool Animating = false;
 
     private ClickManager ButtonClicked;// Referencing the Click Manager game object
     public GameObject SelectionManager;//referencing the Click Manager script.
@@ -30,23 +31,17 @@ public class DogAnimations : MonoBehaviour
     void Update()
     {
         transform.position = new Vector3(center.x + Mathf.Sin(Time.time * VibrateSpeed) * CenterDistance, center.y, center.z);// rowan from code lab help is good at math and I'm not. It's a math sine.
-        if (ButtonClicked.Wrong == true)//If the choice boolean in Click Manager is true.
+        if (Animating == true)//If the choice boolean in Click Manager is true.
         {
-            AnimationTimer += Time.deltaTime; //animation counter will start going up.
+            AnimationTimer += 1 * Time.deltaTime; //animation counter will start going up.
             this.gameObject.GetComponent<SpriteRenderer>().sprite = PukingDog;
             if (AnimationTimer >= MaxTime)//if the animation timer exceeds or is equal to the Max Time-
             {
-            
+                Animating = false;
                 this.gameObject.GetComponent<SpriteRenderer>().sprite = NormalDog; //changing the sprite back to it's normal image.
                 AnimationTimer = 0f; //resetting the timer.
-                ButtonClicked.Wrong = false; //Resetting the button clicked statement.
-               
-                if (ButtonClicked.Wrong == false) //resetting the timer function.
-                {
-                    AnimationTimer = 0f;
-                }
+             
             }
-           
         }
 
     }
