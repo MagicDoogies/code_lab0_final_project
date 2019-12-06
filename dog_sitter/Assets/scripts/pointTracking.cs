@@ -5,34 +5,48 @@ using UnityEngine.SceneManagement;
 
 public class pointTracking : MonoBehaviour
 {
-    public static int timesFed = 0;
-    public static int day = 1;
-    public static int wrong = 0;
+    public static int RanTimer = 0;
+    public static int NewDay = 1;
+    public static int Wrong = 0;
+    public bool GameEnds = false;
 
-   /* private bool oneDay = false;
-    private bool twoDay = false;
-    private bool threeDay = false;*/
-
+    float EndGameTimer = 4f;
+    float EndGameStart = 0f;
+  
     public static pointTracking instance = null;
-    private bool sceneLoaded = false;
+   
     private void Awake()
     {
-        if (instance == null)
+        if (instance == null)//If there is no instance of this script in the scene create one.
             instance = this;
-        else if (instance != null)
+        else if (instance != null)//If there is another script like this in the scene delete this current instance.
             Destroy(this.gameObject);
     }
     private void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
+        if (GameEnds == true)
+        {
+            DontDestroyOnLoad(this.gameObject); //this script won't be destroyed when the game changes scenes.
+        }
+        
     }
 
     private void Update()
     {
-      if (timesFed == 3 && day== 4 && !sceneLoaded)
+      if ( NewDay== 4)
         {
-            SceneManager.LoadScene("score_screen");
-            sceneLoaded = true;
+            GameEnds = true;
+            if (GameEnds == true)
+            {
+                EndGameStart += Time.deltaTime;
+                if (EndGameStart >= EndGameTimer)
+                {
+                    SceneManager.LoadScene("score_screen");
+                }
+                //this script will also talk to an outside gameobject to appear for a set amount of time that says "finished" before the score screen loads in.
+
+            }
+         
         }
     }
 }
