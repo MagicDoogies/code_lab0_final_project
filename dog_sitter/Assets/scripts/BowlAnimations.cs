@@ -5,7 +5,6 @@ using UnityEngine;
 public class BowlAnimations : MonoBehaviour
 {
     public GameObject SelectionManager;
-    private ClickManager ButtonClicked;
     public bool Animating = false;
 
     float AnimationTimer = 0f;
@@ -16,7 +15,6 @@ public class BowlAnimations : MonoBehaviour
 
     public void Start()
     {
-        ButtonClicked = GameObject.Find("SelectionManager").GetComponent<ClickManager>();
 
     }
 

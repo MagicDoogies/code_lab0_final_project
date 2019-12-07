@@ -10,19 +10,20 @@ public class NewButtonText : MonoBehaviour
     public Text ThirdButton;
 
     public pointTracking pointTracking;
-    public GameObject trackingPoints;
-
+    public GameObject Button1;
+    public GameObject Button2;
+    public GameObject Button3;
     
     // Start is called before the first frame update
     void Start()
     {
         pointTracking = GameObject.Find("trackingPoints").GetComponent<pointTracking>();
-
+       
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {  // The text will change depending on what the day is.
         if(pointTracking.NewDay ==1)
         {
             FirstButton.text = "Bow Chow";
@@ -47,6 +48,14 @@ public class NewButtonText : MonoBehaviour
             FirstButton.text = "Chicken Nuggies";
             SecondButton.text = "Nerds Candy";
             ThirdButton.text = "Mom's Spaghetti";
+        }
+
+        if (pointTracking.NewDay == 5)
+        {
+            Button1.SetActive(false);
+            Button2.SetActive(false);
+            Button3.SetActive(false);
+
         }
     }
 

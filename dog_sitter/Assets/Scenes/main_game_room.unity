@@ -690,7 +690,7 @@ MonoBehaviour:
     m_FontSize: 300
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 10
+    m_MinSize: 5
     m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -1995,7 +1995,9 @@ MonoBehaviour:
   SecondButton: {fileID: 1899453889}
   ThirdButton: {fileID: 1325004690}
   pointTracking: {fileID: 0}
-  trackingPoints: {fileID: 0}
+  Button1: {fileID: 142206795}
+  Button2: {fileID: 948017984}
+  Button3: {fileID: 1131173238}
 --- !u!1 &627922009
 GameObject:
   m_ObjectHideFlags: 0
@@ -3116,7 +3118,7 @@ MonoBehaviour:
     m_FontSize: 300
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 10
+    m_MinSize: 5
     m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -3363,7 +3365,7 @@ MonoBehaviour:
     m_FontSize: 300
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 10
+    m_MinSize: 5
     m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0

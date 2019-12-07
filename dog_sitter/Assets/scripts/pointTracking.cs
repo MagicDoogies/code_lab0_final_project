@@ -10,7 +10,7 @@ public class pointTracking : MonoBehaviour
     public static int Wrong = 0;
     public bool GameEnds = false;
 
-    float EndGameTimer = 4f;
+    float EndGameTimer = 2f;
     float EndGameStart = 0f;
   
     public static pointTracking instance = null;
@@ -43,6 +43,10 @@ public class pointTracking : MonoBehaviour
                 if (EndGameStart >= EndGameTimer)
                 {
                     SceneManager.LoadScene("score_screen");
+                    NewDay = 1;
+                    Wrong = 0;
+                    RanTimer = 0;
+
                 }
                 //this script will also talk to an outside gameobject to appear for a set amount of time that says "finished" before the score screen loads in.
 
