@@ -34,18 +34,22 @@ public class ClickManager : MonoBehaviour
             else
             if (pointTracking.NewDay == 3)
             {
-                Dog.Animating = false;
+                Dog.Animating = true;
                 pointTracking.Wrong += 1;
             }
             else
             if (pointTracking.NewDay == 4)
             {
-                Dog.Animating = false;
+                Dog.Animating = true;
                 pointTracking.Wrong += 1;
             }
             if (pointTracking.NewDay == 1)
             {
                 Bowl.Animating = true;
+            }
+            if (pointTracking.NewDay == 5)
+            {
+                pointTracking.NewDay += 1;
             }
         
         pointTracking.NewDay += 1;
@@ -77,7 +81,10 @@ public class ClickManager : MonoBehaviour
                 pointTracking.Wrong += 1;
                 print("It's a new day" + pointTracking.NewDay);
             }
-        
+            if (pointTracking.NewDay == 5)
+            {
+                 pointTracking.NewDay += 1;
+            }
         pointTracking.NewDay += 1;
         print("It's a new day" + pointTracking.NewDay);
     }
@@ -109,6 +116,10 @@ public class ClickManager : MonoBehaviour
                 pointTracking.Wrong += 1;
                 print("It's a new day" + pointTracking.NewDay);
             }
+            if (pointTracking.NewDay ==5)
+            {
+                pointTracking.NewDay += 1;
+            }
 
         pointTracking.NewDay += 1;
         print("It's a new day" + pointTracking.NewDay);
@@ -117,6 +128,6 @@ public class ClickManager : MonoBehaviour
     {
         TheTimer.stopTimer = true;
     }
-
+    
   
 }

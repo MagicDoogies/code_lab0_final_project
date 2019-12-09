@@ -268,7 +268,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 327, y: 52}
+  m_AnchoredPosition: {x: 327, y: 80}
   m_SizeDelta: {x: 3124.8, y: 1680.9}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &351506186
@@ -373,8 +373,9 @@ GameObject:
   - component: {fileID: 807145013}
   - component: {fileID: 807145015}
   - component: {fileID: 807145014}
+  - component: {fileID: 807145016}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: ScoreScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -435,6 +436,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807145012}
   m_CullTransparentMesh: 0
+--- !u!114 &807145016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807145012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3c2edaa49428784cbc5e10365f31f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PerfectScore: {fileID: 21300000, guid: 35febec8b871ac4458c403f8881b70d7, type: 3}
+  WorstScore: {fileID: 21300000, guid: 228d65b937d9e8c428af973bed495e7d, type: 3}
+  OneStar: {fileID: 21300000, guid: cc1e7d23590fd4f48895e88f698ee0fe, type: 3}
+  ThreeStar: {fileID: 21300000, guid: 829b8671a63d0bf4fa6d9be5274d5e33, type: 3}
 --- !u!1 &1236056063
 GameObject:
   m_ObjectHideFlags: 0

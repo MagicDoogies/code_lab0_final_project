@@ -11,13 +11,15 @@ public class countDownTimer : MonoBehaviour
     public bool stopTimer = false;
 
     public GameObject SelectionManager;
+    public pointTracking TrackingPoints;
    
     
 
-    float currentTime = 0f; //variable to hold what the current time of the timer is.
+    public float currentTime = 0f; //variable to hold what the current time of the timer is.
     float startingTime = 5f; //When the timer counts down.
     float RestartTimer = 2f;//Restart the timer when one second has passed.
     float RestartStart = 0f;//The starting point of the rest timer.
+    public bool DogStarved = false;
     
     [SerializeField] Text countdownText; //Letting Unity know that the 'Text' box inside the object countdownText will be a field actively changed in this script.
 
@@ -26,6 +28,8 @@ public class countDownTimer : MonoBehaviour
     {
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
         currentTime = startingTime;
+        TrackingPoints = GameObject.Find("trackingPoints").GetComponent<pointTracking>();
+      
     }
 
     // Update is called once per frame
@@ -46,6 +50,7 @@ public class countDownTimer : MonoBehaviour
         {
             pointTracking.NewDay += 1;
             pointTracking.RanTimer += 2;
+            DogStarved = true;
             stopTimer = true;
         }
         if (stopTimer == true) //If the timer has been stopped.
@@ -55,8 +60,13 @@ public class countDownTimer : MonoBehaviour
             {
                 currentTime = startingTime;//restarts the main timer.
                 RestartTimer = 2;//restarts the internal delay timer.
+                DogStarved = false;
                 stopTimer = false;
             }
+        }
+        if (TrackingPoints.GameEnds == true)
+        {
+            stopTimer = true;
         }
     }
 }

@@ -12,8 +12,6 @@ public class DogAnimations : MonoBehaviour
     float AnimationTimer = 0f;//number the timer starts at.
     float MaxTime = 2f; //Maximum amount of time any timer can go past.
     public bool Animating = false;
-
-    private ClickManager ButtonClicked;// Referencing the Click Manager game object
     public GameObject SelectionManager;//referencing the Click Manager script.
 
     public Sprite NormalDog;
@@ -22,7 +20,6 @@ public class DogAnimations : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ButtonClicked = GameObject.Find("SelectionManager").GetComponent<ClickManager>();// Telling the progra what ButtonClicked means
         center = transform.position; // Defining the initial starting position of the do sprite. 
 
     }

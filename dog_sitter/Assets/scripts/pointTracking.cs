@@ -9,8 +9,9 @@ public class pointTracking : MonoBehaviour
     public static int NewDay = 1;
     public static int Wrong = 0;
     public bool GameEnds = false;
+    private int SceneIndex;
 
-    float EndGameTimer = 2f;
+    float EndGameTimer = 4f;
     float EndGameStart = 0f;
   
     public static pointTracking instance = null;
@@ -24,6 +25,8 @@ public class pointTracking : MonoBehaviour
     }
     private void Start()
     {
+        SceneIndex = SceneManager.GetActiveScene().buildIndex;
+
         if (GameEnds == true)
         {
             DontDestroyOnLoad(this.gameObject); //this script won't be destroyed when the game changes scenes.
@@ -51,7 +54,12 @@ public class pointTracking : MonoBehaviour
                 //this script will also talk to an outside gameobject to appear for a set amount of time that says "finished" before the score screen loads in.
 
             }
-         
+      }
+      if (SceneIndex == 1)
+        {
+            NewDay = 1;
+            Wrong = 0;
+            RanTimer = 0;
         }
     }
 }
