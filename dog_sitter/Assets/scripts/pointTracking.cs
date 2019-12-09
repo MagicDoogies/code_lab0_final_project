@@ -27,11 +27,11 @@ public class pointTracking : MonoBehaviour
     {
         SceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-        if (GameEnds == true)
+       /* if (GameEnds == true)
         {
             DontDestroyOnLoad(this.gameObject); //this script won't be destroyed when the game changes scenes.
         }
-        
+        */
     }
 
     private void Update()
