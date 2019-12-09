@@ -35,6 +35,8 @@ public class countDownTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        Debug.Log("RanTimer" + pointTracking.RanTimer);
         if (stopTimer == false)
         {
             currentTime -= 1 * Time.deltaTime; // Makes sure that the seconds go down by actual seconds as opposed to by frame.
@@ -45,10 +47,10 @@ public class countDownTimer : MonoBehaviour
         {
             SceneManager.LoadScene("main_game_room");//The scene manager will load in the scene titled main_game_room.
         }
-
+     
       if (currentTime <= 0 && sceneIndex== 3 && stopTimer == false) //If this timer ends then you you gain (bad) points for running the timer and a New Day happens.
         {
-            print("Ran the Timer" + pointTracking.RanTimer);
+
             pointTracking.NewDay += 1;
             pointTracking.RanTimer += 2;
             DogStarved = true;

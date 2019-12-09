@@ -28,7 +28,8 @@ public class ScoreRating : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("wrong" + pointTracking.Wrong);
+
+        Debug.Log("RanTimer" + pointTracking.RanTimer);
 
             OneStar.SetActive(pointTracking.Wrong == 4);
             WorstScore.SetActive(pointTracking.RanTimer == 4);
@@ -39,5 +40,9 @@ public class ScoreRating : MonoBehaviour
             ThreeStar.SetActive(pointTracking.Wrong == 2);
             ThreeStar.SetActive(pointTracking.Wrong == 1);
             BestScore.SetActive(pointTracking.Wrong == 0);
+        if (pointTracking.RanTimer >= 4)
+        {
+            BestScore.SetActive(false);
+        }
     }
 }
