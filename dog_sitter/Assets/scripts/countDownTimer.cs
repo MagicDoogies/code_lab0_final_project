@@ -28,7 +28,7 @@ public class countDownTimer : MonoBehaviour
     {
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
         currentTime = startingTime;
-        TrackingPoints = GameObject.Find("trackingPoints").GetComponent<pointTracking>();
+        //TrackingPoints = GameObject.Find("trackingPoints").GetComponent<pointTracking>();
       
     }
 
@@ -48,6 +48,7 @@ public class countDownTimer : MonoBehaviour
 
       if (currentTime <= 0 && sceneIndex== 3 && stopTimer == false) //If this timer ends then you you gain (bad) points for running the timer and a New Day happens.
         {
+            print("Ran the Timer" + pointTracking.RanTimer);
             pointTracking.NewDay += 1;
             pointTracking.RanTimer += 2;
             DogStarved = true;
@@ -64,9 +65,6 @@ public class countDownTimer : MonoBehaviour
                 stopTimer = false;
             }
         }
-        if (TrackingPoints.GameEnds == true)
-        {
-            stopTimer = true;
-        }
+      
     }
 }

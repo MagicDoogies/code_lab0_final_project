@@ -28,41 +28,16 @@ public class ScoreRating : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(pointTracking.Wrong == 4)
-        {
-            OneStar.SetActive(true);
-        }
-       if(pointTracking.RanTimer == 4)
-        {
-            WorstScore.SetActive(true);
-        }
-       if(pointTracking.RanTimer == 2)
-        {
-            OneStar.SetActive(true);
-        }
-        if (pointTracking.RanTimer == 6)
-        {
-            WorstScore.SetActive(true);
-        }
-        if (pointTracking.RanTimer == 8)
-        {
-            WorstScore.SetActive(true);
-        }
-        if(pointTracking.Wrong == 3)
-        {
-            OneStar.SetActive(true);
-        }
-        if(pointTracking.Wrong == 2)
-        {
-            ThreeStar.SetActive(true);
-        }
-        if(pointTracking.Wrong == 1)
-        {
-            ThreeStar.SetActive(true);
-        }
-        if(pointTracking.Wrong == 0)
-        {
-            BestScore.SetActive(true);
-        }
+        Debug.Log("wrong" + pointTracking.Wrong);
+
+            OneStar.SetActive(pointTracking.Wrong == 4);
+            WorstScore.SetActive(pointTracking.RanTimer == 4);
+            OneStar.SetActive(pointTracking.RanTimer == 2);
+            WorstScore.SetActive(pointTracking.RanTimer == 6);
+            WorstScore.SetActive(pointTracking.RanTimer == 8);
+            OneStar.SetActive(pointTracking.Wrong == 3);
+            ThreeStar.SetActive(pointTracking.Wrong == 2);
+            ThreeStar.SetActive(pointTracking.Wrong == 1);
+            BestScore.SetActive(pointTracking.Wrong == 0);
     }
 }
