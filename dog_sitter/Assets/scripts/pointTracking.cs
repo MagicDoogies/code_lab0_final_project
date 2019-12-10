@@ -32,6 +32,7 @@ public class pointTracking : MonoBehaviour
             DontDestroyOnLoad(this.gameObject); //this script won't be destroyed when the game changes scenes.
         }
         
+        
     }
 
     private void Update()
@@ -52,11 +53,13 @@ public class pointTracking : MonoBehaviour
 
             }
       }
-      if (SceneIndex == 1)
-        {
+        Debug.Log("Running Update in pointTracking");
+      if (SceneIndex == 0)
+        {/*
+            
             NewDay = 1;
             Wrong = 0;
-            RanTimer = 0;
+            RanTimer = 0;*/
         }
     }
 }

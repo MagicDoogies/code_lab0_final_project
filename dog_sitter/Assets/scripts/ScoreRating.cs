@@ -31,15 +31,13 @@ public class ScoreRating : MonoBehaviour
 
         Debug.Log("RanTimer" + pointTracking.RanTimer);
 
-            OneStar.SetActive(pointTracking.Wrong == 4);
+            OneStar.SetActive(pointTracking.Wrong == 4 || pointTracking.Wrong == 3);
             WorstScore.SetActive(pointTracking.RanTimer == 4);
-            OneStar.SetActive(pointTracking.RanTimer == 2);
             WorstScore.SetActive(pointTracking.RanTimer == 6);
             WorstScore.SetActive(pointTracking.RanTimer == 8);
-            OneStar.SetActive(pointTracking.Wrong == 3);
-            ThreeStar.SetActive(pointTracking.Wrong == 2);
-            ThreeStar.SetActive(pointTracking.Wrong == 1);
+            ThreeStar.SetActive(pointTracking.Wrong == 2 || pointTracking.Wrong == 1);
             BestScore.SetActive(pointTracking.Wrong == 0);
+       
         if (pointTracking.RanTimer >= 4)
         {
             BestScore.SetActive(false);

@@ -309,6 +309,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stopTimer: 0
   SelectionManager: {fileID: 0}
+  TrackingPoints: {fileID: 0}
+  currentTime: 0
+  DogStarved: 0
   countdownText: {fileID: 542388733}
 --- !u!1 &471210895
 GameObject:
